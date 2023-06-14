@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_1/screens/Persons_screen/persons_screen.dart';
 import 'package:riverpod_1/screens/home_screen/home_provider.dart';
 import 'package:riverpod_1/screens/stream_screen/stream_screen.dart';
 
@@ -18,6 +19,7 @@ class MyHomePage extends ConsumerWidget {
         ),
       ),
       body: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           currentWeather.when(
             data: (data) => Padding(
@@ -67,9 +69,20 @@ class MyHomePage extends ConsumerWidget {
               'Stream',
             ),
           ),
-          const SizedBox(
-            height: 200,
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const PersonsScreen(),
+                ),
+              );
+            },
+            child: const Text(
+              'Persons',
+            ),
           ),
+          const Spacer()
         ],
       ),
     );
