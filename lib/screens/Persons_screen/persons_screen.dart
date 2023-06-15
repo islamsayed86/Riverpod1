@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_1/screens/Persons_screen/persons_provider.dart';
+import 'package:riverpod_1/screens/Persons_screen/persons_change_notifier_provider.dart';
 import 'package:riverpod_1/screens/Persons_screen/widgets/dialogs.dart';
 
 class PersonsScreen extends ConsumerWidget {
@@ -34,6 +34,11 @@ class PersonsScreen extends ConsumerWidget {
                     }
                   },
                 ),
+                trailing: IconButton(
+                    onPressed: () async {
+                      dataModel.remove(person);
+                    },
+                    icon: const Icon(Icons.highlight_remove_outlined)),
               );
             },
           );

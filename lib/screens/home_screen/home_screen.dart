@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_1/screens/Persons_screen/persons_screen.dart';
-import 'package:riverpod_1/screens/home_screen/home_provider.dart';
+import 'package:riverpod_1/screens/films_screen/films_screen.dart';
+import 'package:riverpod_1/screens/home_screen/home_state_provider.dart';
 import 'package:riverpod_1/screens/stream_screen/stream_screen.dart';
 
 class MyHomePage extends ConsumerWidget {
@@ -80,6 +81,19 @@ class MyHomePage extends ConsumerWidget {
             },
             child: const Text(
               'Persons',
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const FilmsScreen(),
+                ),
+              );
+            },
+            child: const Text(
+              'Films',
             ),
           ),
           const Spacer()

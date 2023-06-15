@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_1/screens/Persons_screen/person_repo.dart';
-import 'package:riverpod_1/screens/Persons_screen/persons_provider.dart';
+import 'package:riverpod_1/screens/Persons_screen/persons_change_notifier_provider.dart';
 
 Future<Person?> createOrUpdatePersonDialog(BuildContext context, WidgetRef ref,
     [Person? existingPerson]) {
